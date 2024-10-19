@@ -3,7 +3,7 @@ import boto3
 import gzip
 import shutil
 
-def event_handler(event, context):
+def act_on_object_data():
 
     s3 = boto3.client('s3', region_name='us-west-2')
 
@@ -47,7 +47,4 @@ def event_handler(event, context):
         else:
             print("No files found in the directory")
 
-    return {
-        "statusCode": 200,
-        "body": "Executed Successfully"
-    }
+act_on_object_data()
